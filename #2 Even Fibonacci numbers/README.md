@@ -24,6 +24,25 @@ while(fibonacci.calc(n) < maxValue) {
 console.log(total);
 ```
 
+`fibonacci` — функция, которая рекурсивно вычисляет `n` член последовательности Фибоначчи
+
+```javascript
+function fibonacci(n) {
+	if (!fibonacci.cache) {
+		fibonacci.cache = {
+			"1": 1,
+			"2": 2
+		}
+	}
+
+	if (!fibonacci.cache.hasOwnProperty(n)) {
+		fibonacci.cache[n] =  fibonacci(n - 1) + fibonacci(n - 2);
+	}
+
+	return fibonacci.cache[n];
+}
+```
+
 ### Золотое сечение
 
 Решение построено на факте существования определенного отношения между членами последовательности:
