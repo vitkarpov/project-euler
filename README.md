@@ -1,6 +1,6 @@
 ## Project Euler
 
-![Vitkarpov`s progress](http://projecteuler.net/profile/vitkarpov.png)
+[Progress](http://projecteuler.net/profile/vitkarpov.png)
 
 > Project Euler exists to encourage, challenge, and develop the skills and enjoyment of anyone with an interest in the fascinating world of mathematics.
 
