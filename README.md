@@ -24,4 +24,4 @@ Working. Please, wait...
 obvious_bruteforce.js x 94,609 ops/sec ±0.25% (102 runs sampled)
 ```
 
-Obviously bruteforce solution is really slower then using arithmetic progression.
+Obviously bruteforce solution is absolutely slower then using arithmetic progression.
