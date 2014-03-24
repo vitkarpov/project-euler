@@ -1,13 +1,35 @@
-var 
-		// значения не должны быть больше миллиона
-		maxTerm = 1e+6;
-		
-var total = 0, n = 1,
-		fibonacci = require('./fibonacci');
+/* 
+ * Вычисляет n-й член последовательности Фибоначчи
+ *
+ * @params {number} n Номер члена последовательности
+ */
+function fibonacci(n) {
+    if (!fibonacci.cache) {
+        fibonacci.cache = {
+            "1": 1,
+            "2": 2
+        }
+    }
 
-while(fibonacci.calc(n) < maxValue) {
-	total += (fibonacci.calc(n) % 2 == 0) ? fibonacci.calc(n) : 0;
-	n++;
+    if (!fibonacci.cache.hasOwnProperty(n)) {
+        fibonacci.cache[n] =  fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    return fibonacci.cache[n];
 }
 
-console.log(total);
+function findFibonacci(maxValue) {
+    var total = 0;
+    var n = 1;
+
+    while(fibonacci(n) < maxValue) {
+        total += (fibonacci(n) % 2 == 0) ? fibonacci(n) : 0;
+        n++;
+    }
+
+    return total;
+}
+
+module.exports = function() {
+    findFibonacci(1e+6);
+}

@@ -3,37 +3,30 @@
  * @params {number} d Разность прогрессии	
  */
 function Progression (d) {
-	this.a1 = this.d = d;
+    this.a1 = d;
+    this.d = d;
 }
 /*
  * Возвращает сумму n первых членов прогрессии
  * @params {number} n Количество первых членов прогрессии
  */
 Progression.prototype.getSum = function (n) {
-	return (2*this.a1 + (n-1)*this.d)*n/2;
+    return (2*this.a1 + (n-1)*this.d)*n/2;
 }
 /*
  * Возвращает значение n-го член прогрессии
  * @params {number} n Номер нужного члена
  */
 Progression.prototype.getMember = function (n) {
-	return this.a1 + (n-1)*this.d;
+    return this.a1 + (n-1)*this.d;
 }
 /*
  * Возвращает номер члена прогрессии по заданному значению
  * @params {number} an Значение n-го члена прогрессии
  */
 Progression.prototype.getNumberOfMemberEquals = function (an) {
-	return Math.floor((an - this.a1)/this.d + 1);
+    return Math.floor((an - this.a1)/this.d + 1);
 }
-
-// прогрессии с разностями 5, 3 и 15 соответственно
-var p5 = new Progression(5),
-		p3 = new Progression(3),
-		p15 = new Progression(15);
-
-// нам нужны числа до 1000 исключительно		
-var limit = 999;		
 
 // Сумма натуральных чисел в диапазоне от 1 до 1000
 // которые деляется на 3 и на 5 складывается из
@@ -44,4 +37,15 @@ var limit = 999;
 // таким образом числа кратные 15 складываются дважды.
 // Одну из этих сумм нужно вычесть.
 
-console.log(p5.getSum(p5.getNumberOfMemberEquals(limit)) + p3.getSum(p3.getNumberOfMemberEquals(limit)) - p15.getSum(p15.getNumberOfMemberEquals(limit)));
+function getSumBelow(limit) {
+    // прогрессии с разностями 5, 3 и 15 соответственно
+    var p5 = new Progression(5);
+    var p3 = new Progression(3);
+    var p15 = new Progression(15);
+
+    return p5.getSum(p5.getNumberOfMemberEquals(limit)) + p3.getSum(p3.getNumberOfMemberEquals(limit)) - p15.getSum(p15.getNumberOfMemberEquals(limit));
+}
+
+module.exports = function() {
+    getSumBelow(1000);
+}

@@ -1,11 +1,13 @@
 function getSumBelow (limit) {
-	var sum = 0, i = 0;
+	var sum = 0;
 
-	for ( ; i < limit; i++) {
-		if (!(i % 5) || !(i % 3)) sum += i; 
+	for (var i = 0; i < limit; i++) {
+		if (!(i % 5) || !(i % 3)) sum += i;
 	}
 
 	return sum;
 }
 
-console.log(getSumBelow(1000));
+module.exports = function() {
+    getSumBelow(1000);
+};

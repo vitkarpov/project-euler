@@ -2,7 +2,7 @@
  * should find the largest palindrome
  * made from the product of 3-digit numbers
  */
-console.log((function getTheLargestPalindrome() {
+function getTheLargestPalindrome() {
 
     var n = 999;
     var products = [];
@@ -19,7 +19,7 @@ console.log((function getTheLargestPalindrome() {
     }
 
     return Math.max.apply(null, products);
-}()));
+};
 
 /**
  * check is given number a palindrome number,
@@ -41,3 +41,5 @@ function isPalindrome(n) {
 
     return result;
 }
+
+module.exports = getTheLargestPalindrome;

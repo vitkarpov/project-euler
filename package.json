@@ -1,0 +1,8 @@
+{
+    "name": "project-euler",
+    "description": "Project Euler's problems solutions and benchmarking",
+    "author": "Victor Karpov <viktor.s.karpov@gmail.com>",
+    "dependencies": {
+        "benchmark": "1.0.0"
+    }
+}

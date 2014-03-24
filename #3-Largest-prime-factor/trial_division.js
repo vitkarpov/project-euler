@@ -1,28 +1,6 @@
 var NUMBER_TO_TEST = 600851475143;
 
 /**
- * Find the largest prime factor
- * for the given number
- * @param  {Number} n
- * @return {Number}
- */
-console.log((function getTheLargestPrimeFactorFor(n) {
-    var result = 0;
-    for (var i = Math.floor(Math.sqrt(n)); i >= 1; i--) {
-        // if i is factor and it's prime
-        // than we've reached the goal
-        if ((n % i === 0) && isPrime(i)) {
-            result = i;
-            break;
-        }
-    }
-    return result;
-}(NUMBER_TO_TEST)));
-
-
-// util function
-
-/**
  * Check is given number a prime
  * @param  {Number}  n number
  * @return {Boolean}   is it prime
@@ -43,3 +21,26 @@ function isPrime(n){
   }
   return true;
 }
+
+/**
+ * Find the largest prime factor
+ * for the given number
+ * @param  {Number} n
+ * @return {Number}
+ */
+function getTheLargestPrimeFactorFor(n) {
+    var result = 0;
+    for (var i = Math.floor(Math.sqrt(n)); i >= 1; i--) {
+        // if i is factor and it's prime
+        // than we've reached the goal
+        if ((n % i === 0) && isPrime(i)) {
+            result = i;
+            break;
+        }
+    }
+    return result;
+}
+
+module.exports = function() {
+  getTheLargestPrimeFactorFor(NUMBER_TO_TEST);
+};
